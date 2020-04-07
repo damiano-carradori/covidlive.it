@@ -1,46 +1,42 @@
-import * as React from "react"
-import Layout from "@Components/layout"
-import SEO from "@Components/seo"
-const Faq = () => {
+import React from "react";
+import Layout from "@Components/Layout";
+import SEO from "@Components/SEO";
+import { Box, CardBox, Text, Title2 } from "@Components/Layout/elements";
+
+const Updates = (): React.ReactElement => {
   return (
     <Layout>
       <SEO title="Aggiornamenti" path="/updates/" />
 
-      <div className="layout-wrap">
-        <div className="updates">
-          <h2 className="u-margin-bottom-spacer-large">Aggiornamento dati</h2>
+      <Box py="huge">
+        <Title2 mb="large">Aggiornamento dati</Title2>
 
-          <div className="card">
-            <div className="card__wrap">
-              <div className="card__item">
-                <p>
-                  <strong>18/03/2020</strong> — Dati Regione Campania non pervenuti.
-                </p>
-                <p>
-                  <strong>18/03/2020</strong> — Dati Provincia di Parma non pervenuti.
-                </p>
-                <p>
-                  <strong>17/03/2020</strong> — Dati Provincia di Rimini non aggiornati.
-                </p>
-                <p>
-                  <strong>16/03/2020</strong> — Dati P.A. Trento e Puglia non pervenuti.
-                </p>
-                <p>
-                  <strong>11/03/2020</strong> — Dati Regione Abruzzo non pervenuti.
-                </p>
-                <p>
-                  <strong>10/03/2020</strong> — Dati Regione Lombardia parziali.
-                </p>
-                <p>
-                  <strong>07/03/2020</strong> — Dati Brescia +300 esiti positivi
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <CardBox px={["mid", "large"]} py={["large", "xlarge"]}>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            18/03/2020 — Dati Regione Campania non pervenuti.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            18/03/2020 — Dati Provincia di Parma non pervenuti.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            17/03/2020 — Dati Provincia di Rimini non aggiornati.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            16/03/2020 — Dati P.A. Trento e Puglia non pervenuti.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            11/03/2020 — Dati Regione Abruzzo non pervenuti.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            10/03/2020 — Dati Regione Lombardia parziali.
+          </Text>
+          <Text fontSize={3} fontWeight={700} color="neutral300" py="small">
+            07/03/2020 — Dati Brescia +300 esiti positivi
+          </Text>
+        </CardBox>
+      </Box>
     </Layout>
-  )
-}
+  );
+};
 
-export default Faq
+export default Updates;

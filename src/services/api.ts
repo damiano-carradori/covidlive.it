@@ -1,25 +1,29 @@
-import axios from "axios"
-import { normalizeRegionData, normalizeNationalTrendData, normalizeWorldData } from "./normalize"
+import axios from "axios";
+import { normalizeNationalTrendData, normalizeRegionData, normalizeWorldData } from "./normalize";
+import { RegionDataType } from "@Types/regionData";
+import { NationalTrendDataType } from "@Types/nationalTrendData";
+import { WorldDataType } from "@Types/worldData";
 
 const httpLocalData = axios.create({
   baseURL: process.env.GATSBY_API_URL,
   timeout: process.env.NODE_ENV !== "production" ? 100000 : 10000,
-})
+});
 
 const httpWorldData = axios.create({
   baseURL: process.env.GATSBY_API_WORLD_DATA_URL,
   timeout: process.env.NODE_ENV !== "production" ? 100000 : 10000,
   headers: { "Content-Type": "application/json" },
-})
+});
 
-export const getRegionsData = () => {
-  return httpLocalData.get("/dpc-covid19-ita-regioni.json").then(normalizeRegionData)
-}
+export const getRegionsData = (): Promise<RegionDataType[]> => {
+  return httpLocalData.get("/dpc-covid19-ita-regioni.json").then(normalizeRegionData);
+};
 
-export const getNationalTrendData = () => {
-  return httpLocalData.get("/dpc-covid19-ita-andamento-nazionale.json").then(normalizeNationalTrendData)
-}
-export const getWorldData = () => {
+export const getNationalTrendData = (): Promise<NationalTrendDataType[]> => {
+  return httpLocalData.get("/dpc-covid19-ita-andamento-nazionale.json").then(normalizeNationalTrendData);
+};
+
+export const getWorldData = (): Promise<WorldDataType[]> => {
   return httpWorldData
     .post("/graphql", {
       query: `
@@ -38,5 +42,5 @@ export const getWorldData = () => {
       }
     `,
     })
-    .then(normalizeWorldData)
-}
+    .then(normalizeWorldData);
+};

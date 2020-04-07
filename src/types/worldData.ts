@@ -1,7 +1,7 @@
 export type WorldDataType = {
-  country: string
-  cases: number
-  todayCases: number
-  deaths: number
-  recovered: number
-}
+  name: string;
+  infected: number;
+  newInfected: number;
+  deaths: number;
+  healed: number;
+};

@@ -29,19 +29,19 @@
       "messageBoxCtaLabel": "Scopri di più",
       "bigCardInfected": {
         "title": "Positivi",
-        "additionalContentLabel": "da ieri",
-        "subContentLabel": "Totali fino ad oggi"
+        "additionalContentLabel": "{counter} da ieri",
+        "subContentLabel": "Totali fino ad oggi {total}"
       },
       "bigCardHealed": {
         "title": "Guariti",
-        "additionalContentLabel": "da ieri"
+        "additionalContentLabel": "{counter} da ieri"
       },
       "bigCardDeaths": {
         "title": "Deceduti",
-        "additionalContentLabel": "da ieri",
+        "additionalContentLabel": "{counter} da ieri",
         "subContentLabel": "In attesa di conferma ISS"
       },
-      "lastUpdateLabel": "Ultimo aggiornamento:",
+      "lastUpdateLabel": "Ultimo aggiornamento: {datetime} - {link}",
       "lastUpdateCtaLabel": "Fonte",
       "allRegions": {
         "title": "Le regioni più colpite",

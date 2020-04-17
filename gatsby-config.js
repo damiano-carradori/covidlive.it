@@ -1,6 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}` || ".env",
-})
+});
+
 // config
 module.exports = {
   siteMetadata: {
@@ -24,6 +25,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-svgr`,
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -43,6 +45,13 @@ module.exports = {
         theme_color: `#3e73dd`,
         display: `standalone`,
         icon: `src/assets/images/icon.jpg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Lato:400,700,900`],
+        display: "swap",
       },
     },
     {
@@ -102,4 +111,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

@@ -29,19 +29,19 @@
       "messageBoxCtaLabel": "Show more",
       "bigCardInfected": {
         "title": "Positives",
-        "additionalContentLabel": "today",
-        "subContentLabel": "Total to date: "
+        "additionalContentLabel": "{counter} today",
+        "subContentLabel": "Total to date: {total}"
       },
       "bigCardHealed": {
         "title": "Recovered",
-        "additionalContentLabel": "today"
+        "additionalContentLabel": "{counter} today"
       },
       "bigCardDeaths": {
         "title": "Deceased",
-        "additionalContentLabel": "today",
+        "additionalContentLabel": "{counter} today",
         "subContentLabel": "Pending ISS confirmation"
       },
-      "lastUpdateLabel": "Last update:",
+      "lastUpdateLabel": "Last update: {datetime} - {link}",
       "lastUpdateCtaLabel": "Source",
       "allRegions": {
         "title": "The most affected regions",

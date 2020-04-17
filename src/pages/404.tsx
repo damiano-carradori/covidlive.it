@@ -1,9 +1,12 @@
-import * as React from "react"
-import Layout from "@Components/layout"
-import SEO from "@Components/seo"
-import { useIntl, Link } from "gatsby-plugin-intl"
-const NotFoundPage = () => {
-  const { formatMessage } = useIntl()
+import React from "react";
+import Layout from "@Components/Layout";
+import SEO from "@Components/SEO";
+import { Link, useIntl } from "gatsby-plugin-intl";
+import { Box, Title1, Button } from "@Components/Layout/elements";
+
+const NotFoundPage = (): React.ReactElement => {
+  const { formatMessage } = useIntl();
+
   return (
     <Layout>
       <SEO
@@ -11,18 +14,15 @@ const NotFoundPage = () => {
         description={formatMessage({ id: "globals.header.description" })}
         path="/404/"
       />
-      <div className="notfound-page">
-        <div className="notfound-page__wrap">
-          <div className="notfound-page__item">
-            <h1>{formatMessage({ id: "pages.notFound.title" })}</h1>
-            <Link className="button button--primary" to="/">
-              {formatMessage({ id: "pages.notFound.ctaLabel" })}
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Layout>
-  )
-}
 
-export default NotFoundPage
+      <Box py="huge" textAlign="center">
+        <Title1 my="xlarge">{formatMessage({ id: "pages.notFound.title" })}</Title1>
+        <Link to="/">
+          <Button variant="primary">{formatMessage({ id: "pages.notFound.ctaLabel" })}</Button>
+        </Link>
+      </Box>
+    </Layout>
+  );
+};
+
+export default NotFoundPage;
